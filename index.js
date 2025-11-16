@@ -121,3 +121,31 @@ cvv.addEventListener("input", (e) => {
         cvvWarning.classList.add("hidden");
     }
 });
+
+document.getElementById("validateBtn").addEventListener("click", () => {
+    let numberValid = validateLuhnAlgorithm(cardNumber.value);
+    let type = detectCardType(cardNumber.value);
+    let cvvValid = validateCVV(cvv.value);
+
+    let dateFormat = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+    let dateValid = false;
+
+    if (dateFormat.test(expireDate.value)) {
+        let d = expireDate.value.split("/");
+        let m = d[0];
+        let y = "20" + d[1];
+        dateValid = validateExpirationDate(m, y);
+    }
+
+    let result = document.getElementById("finalResult");
+
+    if (numberValid && type !== "Unknown" && cvvValid && dateValid) {
+        result.classList.remove("hidden");
+        result.style.color = "green";
+        result.textContent = "✔ Card details are valid!";
+    } else {
+        result.classList.remove("hidden");
+        result.style.color = "red";
+        result.textContent = "✖ Invalid card details!";
+    }
+});

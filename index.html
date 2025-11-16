@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Credit Card Validator</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1 class="form-header">Enter Credit Card Details</h1>
+        <form class="card-form">
+            <div class="form-section">
+                <p class="form-label-title">Supported Cards</p>
+                <div class="card-icons-container">
+                    <img src="./icons/visa.svg" alt="Visa" class="card-icon">
+                    <img src="./icons/discover.svg" alt="Discover" class="card-icon">
+                    <img src="./icons/mastercard.svg" alt="Mastercard" class="card-icon">
+                    <img src="./icons/amex.svg" alt="American Express" class="card-icon">
+                </div>
+            </div>
+
+            <label class="form-field-wrapper">
+                <span class="form-label">Card number</span>
+                <input class="form-input" type="text" name="card_number" placeholder="0000 0000 0000 0000" id="cardNumber" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="input-icon-left"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+                <img id="cardType" src="imgs/visa.svg"
+                    class="input-icon-right hidden"
+                    alt="">
+            </label>
+            <p class="error-message hidden" id="invalidCardNumber">Invalid Card number</p>
+
+            <label class="form-field-wrapper-flex">
+                <span class="form-label">Expire date</span>
+                <input class="form-input" type="text" name="expire_date" placeholder="MM/YY" id="expireDate" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="input-icon-left"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+            </label>
+            <p class="error-message hidden" id="invalidExpireDate">Invalid Date</p>
+
+            <label class="form-field-wrapper-flex">
+                <span class="form-label-cvc">
+                    CVC/CVV
+                    <span class="tooltip-container">
+                        <span class="tooltip-text">
+                            Enter 3 digit of CVV
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="tooltip-icon" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </span>
+                <input class="form-input" type="text" name="card_cvc" placeholder="&bull;&bull;&bull;" id="cvv" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="input-icon-left"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+            </label>
+            <p class="error-message hidden" id="invalidCVV">Invalid CVV</p>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

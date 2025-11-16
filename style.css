@@ -1,0 +1,165 @@
+/* A simple reset and default font, similar to Tailwind's 'preflight' */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    margin: 0;
+}
+
+/* Definition for the .hidden class used by JavaScript */
+.hidden {
+    display: none;
+}
+
+/* --- Form Container --- */
+.form-container {
+    width: 33.333333%; /* from w-1/3 */
+    margin-left: auto;   /* from mx-auto */
+    margin-right: auto;  /* from mx-auto */
+}
+
+.form-header {
+    font-size: 1.875rem; /* from text-3xl */
+    line-height: 2.25rem;
+    margin-top: 1.25rem;  /* from mt-5 */
+    text-align: center;  /* from text-center */
+    padding: 1.25rem;      /* from p-5 */
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column; /* from flex-col */
+    flex-wrap: wrap;       /* from flex-wrap */
+    gap: 0.75rem;           /* from gap-3 */
+    width: 100%;            /* from w-full */
+    padding: 1.25rem;       /* from p-5 */
+    background-color: #F3F4F6; /* from bg-gray-100 */
+    border-radius: 0.5rem;  /* from rounded-lg */
+}
+
+/* --- Form Sections --- */
+.form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label-title {
+    font-weight: 700; /* from font-bold */
+    margin-bottom: 0.75rem; /* from mb-3 */
+}
+
+.card-icons-container {
+    display: flex;
+    gap: 1.25rem; /* from gap-5 */
+}
+
+.card-icon {
+    width: 2.5rem; /* from w-10 */
+}
+
+/* --- Form Fields --- */
+.form-field-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-wrapper-flex {
+    position: relative;
+    flex: 1 1 0%; /* from flex-1 */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 700; /* from font-bold */
+    margin-bottom: 0.75rem; /* from mb-3 */
+}
+
+.form-label-cvc {
+    font-weight: 700; /* from font-bold */
+    display: flex;
+    align-items: center; /* from items-center */
+    gap: 0.75rem; /* from gap-3 */
+    margin-bottom: 0.75rem; /* from mb-3 */
+}
+
+.form-input {
+    border-radius: 0.375rem; /* from rounded-md */
+    padding-left: 3rem;  /* from pl-12 */
+    padding-right: 0.5rem; /* from pr-2 */
+    padding-top: 0.5rem;    /* from py-2 */
+    padding-bottom: 0.5rem; /* from py-2 */
+    border: 2px solid #E5E7EB; /* from border-2 border-gray-200 */
+}
+
+.form-input::placeholder {
+    color: #D1D5DB; /* from placeholder-gray-300 */
+}
+
+/* --- Input Icons --- */
+.input-icon-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -0.125rem; /* from -mb-0.5 */
+    transform: translate(50%, -50%); /* from translate-x-1/2 -translate-y-1/2 */
+    color: #000; /* from text-black */
+    height: 1.5rem; /* from h-6 */
+    width: 1.5rem;  /* from w-6 */
+}
+
+.input-icon-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -0.125rem; /* from -mb-0.5 */
+    transform: translate(-50%, -50%); /* from -translate-x-1/2 -translate-y-1/2 */
+    color: #000; /* from text-black */
+    height: 1.5rem; /* from h-6 */
+    width: 1.5rem;  /* from w-6 */
+}
+
+/* This rule REPLACES the 'peer-placeholder-shown' utility */
+.form-input:placeholder-shown ~ .input-icon-left,
+.form-input:placeholder-shown ~ .input-icon-right {
+    color: #D1D5DB; /* from peer-placeholder-shown:text-gray-300 */
+}
+
+
+/* --- Error Message --- */
+.error-message {
+    margin-top: 0; /* from mt-0 */
+    color: #EF4444; /* from text-red-500 */
+}
+
+/* --- Tooltip --- */
+.tooltip-container {
+    position: relative; /* from relative */
+}
+
+.tooltip-icon {
+    height: 1rem; /* from h-4 */
+    width: 1rem;  /* from w-4 */
+}
+
+.tooltip-text {
+    display: none; /* from hidden */
+    justify-content: center; /* from justify-center */
+    align-items: center; /* from items-center */
+    padding: 0.25rem 0.5rem; /* from px-2 py-1 */
+    font-size: 0.75rem; /* from text-xs */
+    position: absolute;
+    right: -0.5rem; /* from -right-2 */
+    transform: translate(100%, -50%); /* from transform translate-x-full -translate-y-1/2 */
+    width: max-content; /* from w-max */
+    top: 50%; /* from top-1/2 */
+    background-color: #000; /* from bg-black */
+    color: #FFF; /* from text-white */
+    border-radius: 0.25rem; /* Added for better looks */
+}
+
+/* This rule REPLACES the 'group-hover:flex' utility */
+.tooltip-container:hover .tooltip-text {
+    display: flex;
+}

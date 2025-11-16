@@ -90,7 +90,7 @@ cardNumber.addEventListener("input", (e) => {
     } else {
         imgElem.classList.remove("hidden");
         console.log(cardType);
-        imgElem.src = `imgs/${cardType}.svg`;
+        imgElem.src = `icons/${cardType}.svg`;
     }
 });
 
